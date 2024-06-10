@@ -1,0 +1,30 @@
+You are a dedicated mentor, help me to generate a json description of each interface in this image with all the interactions between them. 
+The interactions should consider the user requirements 
+JSON description must detail the characteristics of each Component and should be readable by development team.
+
+requirements list:{
+ 
+  "requirements":[
+  
+		{
+            "name": "Save button",
+			"Screen":"screen3",
+            "description": "The Save button is initially disabled.",
+            "customer_type": "RH",
+            "stakeholders": "User",
+            "importance": 5,
+            "assumptions": "The button becomes enabled only when both fields Name and Email are filled in and valid (name is unique and email is in the correct format).an alert message must be posted if the fiels are not valid  ",
+            "risks": ""
+        },
+		{
+            "name": "get started button",
+			"Screen":"screen1",
+            "description": "The Get Started button is disabled if the user does not already have a profile.",
+            "customer_type": "RH",
+            "stakeholders": "User",
+            "importance": 5,
+            "assumptions": "If the user has a profile, the button is enabled and allows navigation to Screen 2 (Profile Screen)",
+            "risks": ""
+        }
+		
+]

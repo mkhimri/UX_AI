@@ -1,0 +1,172 @@
+
+You are a dedicated mentor, help me to generate a detailed text specification document that can be used by the development team to understand an UX prototype.
+The UX prototype is represented in JSON format which details the features and the interactions of each screen's components.
+
+I will provide you with the following information:
+UX prototype: JSON content that presents all the UX prototype components.
+requirements list: JSON content that presents all the user requirements taken into consideration during the implementation of the prototype.
+
+your analysis should consider the user requirements and the UX prototype content.
+
+You must follow the following steps:
+1- You should verify if the requirements list is well presented and respected in the prototype.
+if yes go to the second step, if not you can respond in valid JSON list the missing points according to the 
+response structure below and insert the response in a JSON file that I can download then you can go to the second step:
+
+Prototype Missings List compared to the requirements :
+[
+  {
+    "Screen": "screen identification in the prototype",
+	"Component": "Component identification in the prototype",
+    "Missing": "According to the requirements where the missing exist",
+    "Reason": "the rule that should be respected according to the requirements list"
+  }
+]
+  
+2- generate a text document that include the prototype description with all its elements, interactions and details according to the requirements list. 
+you should give all the information and details that can help any developer understand this prototype.
+
+{{!-- {{The document should be structured and readable for any team member.}} --}}
+
+The document should not include the missing requirements or prototype components
+
+requirements list:{
+ 
+  "requirements":[
+  
+		{
+            "name": "Save button",
+			"Screen":"screen3",
+            "description": "The Save button is initially disabled.",
+            "customer_type": "RH",
+            "stakeholders": "User",
+            "importance": 5,
+            "assumptions": "The button becomes enabled only when both fields Name and Email are filled in and valid (name is unique and email is in the correct format).an alert message must be posted if the fiels are not valid  ",
+            "risks": ""
+        },
+		{
+            "name": "get started button",
+			"Screen":"screen1",
+            "description": "The Get Started button is disabled if the user does not already have a profile.",
+            "customer_type": "RH",
+            "stakeholders": "User",
+            "importance": 5,
+            "assumptions": "If the user has a profile, the button is enabled and allows navigation to Screen 2 (Profile Screen)",
+            "risks": ""
+        }
+		
+]
+}
+
+UX prototype:{
+  "metadata": {
+    "title": "High-Fidelity Prototype",
+    "author": "Test",
+    "version": "1.0",
+    "dateCreated": "2024-05-27",
+    "description": "A high-fidelity prototype for the new app design."
+  },
+  "screens": [
+    {
+      "id": "screen1",
+      "name": "Home Screen",
+      "components": [
+        {
+          "type": "header",
+          "id": "header1",
+          "text": "Welcome to the App"
+        },
+        {
+          "type": "button",
+          "id": "button1",
+          "text": "Get Started",
+          "style": {
+            "color": "white",
+            "backgroundColor": "blue"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "screen2"
+          }
+        },
+        {
+          "type": "image",
+          "id": "image1",
+          "src": "welcome.png",
+          "alt": "Welcome Image"
+        }
+      ]
+    },
+    {
+      "id": "screen2",
+      "name": "Profile Screen",
+      "components": [
+        {
+          "type": "header",
+          "id": "header2",
+          "text": "Your Profile"
+        },
+        {
+          "type": "text",
+          "id": "text1",
+          "content": "Name: Test"
+        },
+        {
+          "type": "text",
+          "id": "text2",
+          "content": "Email: Test@example.com"
+        },
+        {
+          "type": "button",
+          "id": "button2",
+          "text": "Edit Profile",
+          "style": {
+            "color": "white",
+            "backgroundColor": "green"
+          },
+          "action": {
+            "type": "navigate",
+            "target": "screen3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "screen3",
+      "name": "Edit Profile Screen",
+      "components": [
+        {
+          "type": "header",
+          "id": "header3",
+          "text": "Edit Your Profile"
+        },
+        {
+          "type": "input",
+          "id": "input1",
+          "label": "Name",
+          "value": "Test"
+        },
+        {
+          "type": "input",
+          "id": "input2",
+          "label": "Email",
+          "value": "test@example.com"
+        },
+        {
+          "type": "button",
+          "id": "button3",
+          "text": "Save",
+          "style": {
+            "color": "white",
+            "backgroundColor": "blue"
+          },
+          "action": {
+            "type": "submit",
+            "target": "saveProfile"
+          }
+        }
+      ]
+    }
+  ],
+ 
+}
